@@ -1,7 +1,6 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  namespace: tivit
   name: rabbitmq
 spec:
   accessModes:
