@@ -10,13 +10,5 @@ stages:
   steps:
   - applyYamlConfig:
       path: ./httpd.yaml
-- name: Criando Service PHP
-  steps:
-  - applyYamlConfig:
-      path: ./php-apache-svc.yaml
-  when:
-    event:
-      exclude:
-      - push
 timeout: 60
 notification: {}
