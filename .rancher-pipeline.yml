@@ -5,5 +5,10 @@ stages:
       dockerfilePath: ./Dockerfile
       buildContext: .
       tag: httpd:latest
+      registry: 127.0.0.1:34675
+- name: Deploy
+  steps:
+  - applyYamlConfig:
+      path: ./deployment.yaml
 timeout: 60
 notification: {}
