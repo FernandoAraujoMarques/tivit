@@ -10,7 +10,24 @@ spec:
   - port: 80
   selector:
     run: php-apache
-    
+---
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: php-apache
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/router.tls.certresolver: default
+spec:
+  rules:
+    - host: php.k8s-lab.com.br
+      http:
+        paths:
+          - backend:
+              serviceName: php-apache
+              servicePort: 80
+              
 ---
 apiVersion: apps/v1
 kind: Deployment
