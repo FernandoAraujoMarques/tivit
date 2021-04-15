@@ -16,6 +16,10 @@ stages:
   steps:
   - runScriptConfig:
       image: node:latest
-      shellScript: curl -v https://apache.k8s-lab.com.br/
-timeout: 60
+      shellScript: curl -v https://apache.k8s-lab.com.br/ --insecure
+    when:
+      event:
+        include:
+        - pull_request
+timeout: 1
 notification: {}
