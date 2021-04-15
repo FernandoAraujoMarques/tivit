@@ -6,9 +6,13 @@ stages:
       buildContext: .
       tag: httpd:latest
       registry: 127.0.0.1:34675
-- name: Deploy
+- name: Deploy-httpd
   steps:
   - applyYamlConfig:
       path: ./httpd.yaml
+ - name: Deploy-mysql
+  steps:
+  - applyYamlConfig:
+      path: ./mysql.yaml
 timeout: 60
 notification: {}
