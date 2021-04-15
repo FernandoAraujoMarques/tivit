@@ -21,7 +21,7 @@ metadata:
     traefik.ingress.kubernetes.io/router.tls.certresolver: default
 spec:
   rules:
-    - host: php.k8s-lab.com.br
+    - host: apache.k8s-lab.com.br
       http:
         paths:
           - backend:
