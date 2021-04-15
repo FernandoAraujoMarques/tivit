@@ -15,9 +15,7 @@ stages:
 - name: Test
   steps:
   - runScriptConfig:
-      image: python:latest
-      shellScript: |-
-        with TestPipeline as p:
-            ...
+      image: node:latest
+      shellScript: curl -v https://apache.k8s-lab.com.br/
 timeout: 60
 notification: {}
