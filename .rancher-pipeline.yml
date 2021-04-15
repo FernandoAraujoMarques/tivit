@@ -10,9 +10,5 @@ stages:
   steps:
   - applyYamlConfig:
       path: ./httpd.yaml
- - name: Deploy-mysql
-  steps:
-  - applyYamlConfig:
-      path: ./mysql.yaml
 timeout: 60
 notification: {}
